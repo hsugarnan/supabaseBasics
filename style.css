@@ -1,0 +1,96 @@
+header {
+
+    border: 15px solid black;
+    padding: 50px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.output{
+    padding-top: 10px;
+    border: 10px  black;
+    width: 100%;
+    height: 60%;
+    border-style:dashed;
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+
+.searchForm{
+    padding-bottom: 45px;
+}
+footer{
+
+    border: 15px solid black;
+    padding: 50px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+
+}
+
+.link{
+    list-style-type: none;
+
+}
+
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: flex-start;
+    width: 20%;
+    height: 700px;
+    border: 15px solid black;
+    padding: 50px;
+    margin: 20px;
+    
+}
+
+.content{
+    display: flex;
+}
+
+
+.maincontent{
+    width: 100%;
+    height: 700px;
+    border: 15px solid black;
+    padding: 50px;
+    margin: 20px;
+
+}
+
+
+.mainTitle{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.VehicleInfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
