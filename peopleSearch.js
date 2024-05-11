@@ -25,7 +25,7 @@ document.getElementById('searchForm').addEventListener('submit', async function(
         const { data, error } = await supabase
             .from('People')
             .select('*')
-            .ilike('Name', `%${searchName}%`);
+            .ilike('Name', `%${searchName}%`);//to make it case insensitive
 
             if (error) {
                 console.error('Error fetching people data:', error);
@@ -39,6 +39,17 @@ document.getElementById('searchForm').addEventListener('submit', async function(
                 return;
             }
             console.log(data);
+            for(let i = 0; i < data.length; i++){
+                //loop through all the length and then print out the possible options
+                        document.querySelector('.output').innerHTML = `<p>Name: ${data[i].Name}</p> 
+                        <p>Address: ${data[i].Address}</p> 
+                        <p>DOB: ${data[i].DOB}</p>
+                        <p>License Number: ${data[i].LicenseNumber}</p> 
+                        <p>Expiry Date: ${data[i].ExpiryDate}</p> 
+                        <p>Person ID: ${data[i].PersonID}</p>  `;
+
+
+            } 
         
 
 
