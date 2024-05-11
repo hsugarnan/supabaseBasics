@@ -8,7 +8,6 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey)
 console.log(supabase);
 
-
 document.getElementById('searchForm').addEventListener('submit', async function(event) {
     event.preventDefault();  // Prevent the form from submitting in the traditional way
 
@@ -22,23 +21,47 @@ document.getElementById('searchForm').addEventListener('submit', async function(
         return;
     }
 
-    // Fetching data filtered by the name or driving license number
-    const { data, error } = await supabase
+    if(searchName){
+        const { data, error } = await supabase
+            .from('People')
+            .select('*')
+            .ilike('Name', `%${searchName}%`);
+
+            if (error) {
+                console.error('Error fetching people data:', error);
+                document.querySelector('.output p').textContent = 'Error fetching data';
+                return;
+            }
+        
+            if (data.length === 0) {
+                document.querySelector('.output p').textContent = 'No matching records found';
+                
+                return;
+            }
+            console.log(data);
+        
+
+
+    }else if(searchLicense){
+        const { data, error } = await supabase
         .from('People')
         .select('*')
-        .or(`Name.ilike.%${searchName}%,LicenseNumber.ilike.%${searchLicense}%`);
+        .eq('LicenseNumber', searchLicense);
 
-    if (error) {
-        console.error('Error fetching people data:', error);
-        document.querySelector('.output p').textContent = 'Error fetching data';
-        return;
-    }
-
-    if (data.length === 0) {
-        document.querySelector('.output p').textContent = 'No matching records found';
-        return;
-    }
-
-    console.log(data);
+        if (error) {
+            console.error('Error fetching people data:', error);
+            document.querySelector('.output p').textContent = 'Error fetching data';
+            return;
+        }
     
-});
+        if (data.length === 0) {
+            document.querySelector('.output p').textContent = 'No matching records found';
+            return;
+        }
+        console.log(data);
+
+    }
+
+
+    
+}); 
