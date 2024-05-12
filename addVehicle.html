@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="module" src="peopleSearch.js" ></script>
+    <script type="module" src="addVehicle.js" ></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>People Search</title>
@@ -35,20 +35,24 @@
             <input type="text" id="color" name="color" required><br>
             <label for="ownerName">Owner's Name:</label><br>
             <input type="text" id="ownerName" name="ownerName" required><br>
-            <div class="ownerSelect"></div>
-          <div class="addOwner">
-            <label for="ownerLicense">Owner's License Number:</label><br>
-            <input type="text" id="ownerLicense" name="ownerLicens"><br>
-            <label for="ownerAddress">Owner's Address:</label><br>
-            <input type="text" id="ownerAddress" name="ownerAddress"><br>
-            <label for="ownerDOB">Owner's DOB:</label><br>
-            <input type="text" id="ownerDOB" name="ownerDOB"><br>
-            <label for="ownerExpiry">Owner's Expiry Date:</label><br>
-            <input type="text" id="ownerExpiry" name="ownerExpiry"><br>
-
-        </div>  
+            <select id="ownerSelect" style="display: none;"></select>
             <input type="submit" value="Submit">
         </form> 
+        <div id ="addOwner"> 
+            <form id="ownerForm">
+                <label for="ownerLicense">Owner's License Number:</label><br>
+                <input type="text" id="ownerLicense" name="ownerLicense"><br>
+                <label for="ownerAddress">Owner's Address:</label><br>
+                <input type="text" id="ownerAddress" name="ownerAddress"><br>
+                <label for="ownerDOB">Owner's DOB:</label><br>
+                <input type="text" id="ownerDOB" name="ownerDOB"><br>
+                <label for="ownerExpiry">Owner's Expiry Date:</label><br>
+                <input type="text" id="ownerExpiry" name="ownerExpiry"><br>
+                <input type="submit" value="Submit">
+            </form>
+            
+            
+        </div>  
         <div class="output">
         <div class="mainTitle">
             <p>Results</p>
