@@ -94,3 +94,20 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+
+
+.PersonInfo{
+    display: flex;
+}
+
+
+.eachPerson{
+    padding-right:8px;
+
+
+}
+
+
+ .addOwner{
+    display: block;
+}

@@ -38,18 +38,25 @@ document.getElementById('searchForm').addEventListener('submit', async function(
                 
                 return;
             }
-            console.log(data);
+            console.log(data[0].Name);
+            let htmlContent = '';
+
             for(let i = 0; i < data.length; i++){
                 //loop through all the length and then print out the possible options
-                        document.querySelector('.output').innerHTML = `<p>Name: ${data[i].Name}</p> 
+                htmlContent +=  ` 
+                     <div class="eachPerson">
+                        <p>Name: ${data[i].Name}</p> 
                         <p>Address: ${data[i].Address}</p> 
                         <p>DOB: ${data[i].DOB}</p>
                         <p>License Number: ${data[i].LicenseNumber}</p> 
                         <p>Expiry Date: ${data[i].ExpiryDate}</p> 
-                        <p>Person ID: ${data[i].PersonID}</p>  `;
+                        <p>Person ID: ${data[i].PersonID}</p>  
+                     </div>`;
 
 
             } 
+
+            document.querySelector('.PersonInfo').innerHTML = htmlContent;
         
 
 
@@ -69,7 +76,26 @@ document.getElementById('searchForm').addEventListener('submit', async function(
             document.querySelector('.output p').textContent = 'No matching records found';
             return;
         }
-        console.log(data);
+
+        let htmlContent = '';
+
+            for(let i = 0; i < data.length; i++){
+                //loop through all the length and then print out the possible options
+                htmlContent +=  ` 
+                     <div class="eachPerson">
+                        <p>Name: ${data[i].Name}</p> 
+                        <p>Address: ${data[i].Address}</p> 
+                        <p>DOB: ${data[i].DOB}</p>
+                        <p>License Number: ${data[i].LicenseNumber}</p> 
+                        <p>Expiry Date: ${data[i].ExpiryDate}</p> 
+                        <p>Person ID: ${data[i].PersonID}</p>  
+                     </div>`;
+
+
+            } 
+
+            document.querySelector('.PersonInfo').innerHTML = htmlContent;
+        
 
     }
 

@@ -23,16 +23,38 @@
     <div class="sidebar">
         <img src="uon.jpg" alt="University of Nottingham Service">
     </div>
-
     <div class="maincontent">
-        <form class="searchForm" action="/action_page.php">
-            <label for="name">Search by Person Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="num">Search by Driving License Number:</label><br>
-            <input type="text" id="num" name="num"><br><br>
+        <form class="searchForm" id="searchForm">
+            <label for="plateNumber">Registration (Plate) Number:</label><br>
+            <input type="text" id="plateNumber" name="plateNumber" required><br>
+            <label for="make">Make:</label><br>
+            <input type="text" id="make" name="make" required><br>
+            <label for="model">Model:</label><br>
+            <input type="text" id="model" name="model" required><br>
+            <label for="color">Color:</label><br>
+            <input type="text" id="color" name="color" required><br>
+            <label for="ownerName">Owner's Name:</label><br>
+            <input type="text" id="ownerName" name="ownerName" required><br>
+            <div class="ownerSelect"></div>
+          <div class="addOwner">
+            <label for="ownerLicense">Owner's License Number:</label><br>
+            <input type="text" id="ownerLicense" name="ownerLicens"><br>
+            <label for="ownerAddress">Owner's Address:</label><br>
+            <input type="text" id="ownerAddress" name="ownerAddress"><br>
+            <label for="ownerDOB">Owner's DOB:</label><br>
+            <input type="text" id="ownerDOB" name="ownerDOB"><br>
+            <label for="ownerExpiry">Owner's Expiry Date:</label><br>
+            <input type="text" id="ownerExpiry" name="ownerExpiry"><br>
+
+        </div>  
             <input type="submit" value="Submit">
         </form> 
-        <div class="output"><p>Results</p></div>
+        <div class="output">
+        <div class="mainTitle">
+            <p>Results</p>
+        
+        </div>
+    </div>
     </div>
  
 </div>
